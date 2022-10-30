@@ -9,13 +9,12 @@ import gym
 from gym import utils, spaces
 import pickle
 
-import der_muj.utils.transform_utils as T
+import der_mujoco.utils.transform_utils as T
 from der_mujoco.utils.transform_utils import IDENTITY_QUATERNION
 from der_mujoco.utils.mjc_utils import MjSimWrapper
 from der_mujoco.utils.xml_utils import XMLWrapper
 from der_mujoco.utils.data_utils import compute_PCA
 from der_mujoco.assets.gen_derrope import DERGen_eq1D, DERGen_2D
-# from der_muj.controllers.rope_controller import DERRopeBase, DERRope1
 from der_mujoco.controllers.rope_controller import DERRopeBase
 
 
