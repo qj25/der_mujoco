@@ -1,0 +1,93 @@
+<mujoco model="anchor-box">
+  <worldbody>
+    <body name="anchor_box" pos="0.030553657784353483 -3.9272824470048736e-16 0.5">
+      <geom name="fixedbox1" type="box" mass="1" size="0.0500 0.0500 0.1000" conaffinity="0" contype="0" rgba=".8 .2 .1 0.3" friction="1 0.005 0.0001"/>
+    </body>
+  </worldbody>
+  <equality>
+     <weld body1='anchor_box' body2='r_joint40_body' solref='0.004 1' relpose='0.05 0 0 1 0 0 0'/>
+     <connect body1='r_joint1_body' body2='r_joint2_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint2_body' body2='r_joint3_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint3_body' body2='r_joint4_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint4_body' body2='r_joint5_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint5_body' body2='r_joint6_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint6_body' body2='r_joint7_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint7_body' body2='r_joint8_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint8_body' body2='r_joint9_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint9_body' body2='r_joint10_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint10_body' body2='r_joint11_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint11_body' body2='r_joint12_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint12_body' body2='r_joint13_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint13_body' body2='r_joint14_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint14_body' body2='r_joint15_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint15_body' body2='r_joint16_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint16_body' body2='r_joint17_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint17_body' body2='r_joint18_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint18_body' body2='r_joint19_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint19_body' body2='r_joint20_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint20_body' body2='r_joint21_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint21_body' body2='r_joint22_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint22_body' body2='r_joint23_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint23_body' body2='r_joint24_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint24_body' body2='r_joint25_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint25_body' body2='r_joint26_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint26_body' body2='r_joint27_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint27_body' body2='r_joint28_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint28_body' body2='r_joint29_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint29_body' body2='r_joint30_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint30_body' body2='r_joint31_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint31_body' body2='r_joint32_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint32_body' body2='r_joint33_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint33_body' body2='r_joint34_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint34_body' body2='r_joint35_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint35_body' body2='r_joint36_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint36_body' body2='r_joint37_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint37_body' body2='r_joint38_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint38_body' body2='r_joint39_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+     <connect body1='r_joint39_body' body2='r_joint40_body' active='true' solref='0.001 1' anchor='0 0.0 0'/>
+  </equality>
+  <contact>
+    <exclude body1="r_link1_body" body2="r_link40_body"/>
+    <exclude body1="r_link1_body" body2="r_link39_body"/>
+    <exclude body1="r_link2_body" body2="r_link40_body"/>
+    <exclude body1="r_link1_body" body2="r_link2_body"/>
+    <exclude body1="r_link2_body" body2="r_link3_body"/>
+    <exclude body1="r_link3_body" body2="r_link4_body"/>
+    <exclude body1="r_link4_body" body2="r_link5_body"/>
+    <exclude body1="r_link5_body" body2="r_link6_body"/>
+    <exclude body1="r_link6_body" body2="r_link7_body"/>
+    <exclude body1="r_link7_body" body2="r_link8_body"/>
+    <exclude body1="r_link8_body" body2="r_link9_body"/>
+    <exclude body1="r_link9_body" body2="r_link10_body"/>
+    <exclude body1="r_link10_body" body2="r_link11_body"/>
+    <exclude body1="r_link11_body" body2="r_link12_body"/>
+    <exclude body1="r_link12_body" body2="r_link13_body"/>
+    <exclude body1="r_link13_body" body2="r_link14_body"/>
+    <exclude body1="r_link14_body" body2="r_link15_body"/>
+    <exclude body1="r_link15_body" body2="r_link16_body"/>
+    <exclude body1="r_link16_body" body2="r_link17_body"/>
+    <exclude body1="r_link17_body" body2="r_link18_body"/>
+    <exclude body1="r_link18_body" body2="r_link19_body"/>
+    <exclude body1="r_link19_body" body2="r_link20_body"/>
+    <exclude body1="r_link20_body" body2="r_link21_body"/>
+    <exclude body1="r_link21_body" body2="r_link22_body"/>
+    <exclude body1="r_link22_body" body2="r_link23_body"/>
+    <exclude body1="r_link23_body" body2="r_link24_body"/>
+    <exclude body1="r_link24_body" body2="r_link25_body"/>
+    <exclude body1="r_link25_body" body2="r_link26_body"/>
+    <exclude body1="r_link26_body" body2="r_link27_body"/>
+    <exclude body1="r_link27_body" body2="r_link28_body"/>
+    <exclude body1="r_link28_body" body2="r_link29_body"/>
+    <exclude body1="r_link29_body" body2="r_link30_body"/>
+    <exclude body1="r_link30_body" body2="r_link31_body"/>
+    <exclude body1="r_link31_body" body2="r_link32_body"/>
+    <exclude body1="r_link32_body" body2="r_link33_body"/>
+    <exclude body1="r_link33_body" body2="r_link34_body"/>
+    <exclude body1="r_link34_body" body2="r_link35_body"/>
+    <exclude body1="r_link35_body" body2="r_link36_body"/>
+    <exclude body1="r_link36_body" body2="r_link37_body"/>
+    <exclude body1="r_link37_body" body2="r_link38_body"/>
+    <exclude body1="r_link38_body" body2="r_link39_body"/>
+    <exclude body1="r_link39_body" body2="r_link40_body"/>
+  </contact>
+</mujoco>

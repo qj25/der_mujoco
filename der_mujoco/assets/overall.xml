@@ -1,0 +1,434 @@
+<mujoco model="base">
+  <statistic extent="2" meansize=".05" />
+  <compiler angle="radian" coordinate="local" eulerseq="XYZ" />
+  <option cone="elliptic" impratio="1" integrator="RK4" iterations="30" jacobian="sparse" solver="Newton" timestep="0.001" tolerance="1e-10" />
+  <size nconmax="5000" njmax="5000" />
+
+  <asset>
+    <texture builtin="gradient" height="512" rgb1="0.3 0.5 0.7" rgb2="0 0 0" type="skybox" width="512" />
+    <texture builtin="checker" height="512" mark="cross" markrgb=".8 .8 .8" name="texplane" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" type="2d" width="512" />
+    <material name="matplane" reflectance="0.3" texrepeat="1 1" texture="texplane" texuniform="true" />
+  <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link0.stl" name="link0" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link1.stl" name="link1" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link2.stl" name="link2" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link3.stl" name="link3" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link4.stl" name="link4" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link5.stl" name="link5" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link6.stl" name="link6" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link7.stl" name="link7" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link0_vis.stl" name="link0_vis" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link1_vis.stl" name="link1_vis" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link2_vis.stl" name="link2_vis" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link3_vis.stl" name="link3_vis" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link4_vis.stl" name="link4_vis" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link5_vis.stl" name="link5_vis" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link6_vis.stl" name="link6_vis" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda/meshes/link7_vis.stl" name="link7_vis" />
+  <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda_gripper/meshes/hand.stl" name="hand" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda_gripper/meshes/hand_vis.stl" name="hand_vis" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda_gripper/meshes/finger.stl" name="finger" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda_gripper/meshes/finger_vis.stl" name="finger_vis" />
+    <mesh file="/home/qj/Desktop/git/rope_sim/der_muj/der_muj/assets/panda_gripper/meshes/finger_longer.stl" name="finger_vis2" />
+  </asset>
+
+  <visual>
+    <rgba haze="0.15 0.25 0.35 1" />
+    <quality shadowsize="2048" />
+    <map fogend="15" fogstart="10" haze="0.3" shadowscale="0.5" stiffness="700" zfar="40" znear="0.001" />
+  </visual>
+
+  <actuator><motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint1" name="torq_j1" />
+    <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint2" name="torq_j2" />
+    <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint3" name="torq_j3" />
+    <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint4" name="torq_j4" />
+    <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint5" name="torq_j5" />
+    <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="joint6" name="torq_j6" />
+    <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="joint7" name="torq_j7" />
+  <position ctrllimited="true" ctrlrange="0.0 0.04" forcelimited="true" forcerange="-20 20" joint="finger_joint1" kp="1000" name="gripper_finger_joint1" />
+    <position ctrllimited="true" ctrlrange="-0.04 0.0" forcelimited="true" forcerange="-20 20" joint="finger_joint2" kp="1000" name="gripper_finger_joint2" />
+  </actuator>
+
+  <worldbody>
+    
+    <camera mode="fixed" pos="0 -1 1.5" quat="0.866 0.5 0 0" />
+    <camera mode="fixed" pos="-1.8 -1.1 .7" quat="0.73296292  0.56242221 -0.23296292 -0.30360319" />
+    <camera mode="fixed" pos="-.75 -1.5 .5" quat="0.707 0.707 0 0" />
+    <geom condim="3" material="matplane" name="floor" pos="0 0 0" size="3 3 .125" type="plane" />
+    <light castshadow="false" diffuse=".4 .4 .4" dir="0 0 -1" directional="true" pos="0 0 5.0" specular="0.1 0.1 0.1" />
+    <light diffuse=".6 .6 .6" dir="0 0 -1" directional="true" pos="0 0 4" specular="0.2 0.2 0.2" />
+    
+    
+    
+    
+  <body name="base" pos="-1.42 0 0">
+      
+      <camera mode="fixed" name="robotview" pos="1.0 0 0.4" quat="0.653 0.271 0.271 0.653" />
+      <inertial diaginertia="0 0 0" mass="0" pos="0 0 0" />
+      
+      
+      <body name="link0" pos="0 0 0">
+        <site group="1" name="base_site" pos="0 0 0" rgba="0 0 0 0" size="0.01 0.01 0.01" type="sphere" />
+        <geom conaffinity="0" contype="0" group="1" mesh="link0_vis" name="link0_visual" rgba="1 1 1 1" type="mesh" />
+        
+        <geom group="0" mesh="link0" name="link0_collision" type="mesh" />
+        <body name="link1" pos="0 0 0.333">
+          <inertial fullinertia="0.70337 0.70661 0.009117 -0.000139 0.006772 0.019169" mass="4.97" pos="0.003875 0.002081 0.05" />
+          <joint axis="0 0 1" damping="0.1" limited="true" name="joint1" pos="0 0 0" range="-2.8973 2.8973" />
+          <geom conaffinity="0" contype="0" group="1" mesh="link1_vis" name="link1_visual" rgba="1 1 1 1" type="mesh" />
+          
+          <geom group="0" mesh="link1" name="link1_collision" type="mesh" />
+          <body name="link2" pos="0 0 0" quat="0.707107 -0.707107 0 0">
+            <inertial fullinertia="7.9620e-03 2.8110e-02 2.5995e-02 -3.9250e-03 1.0254e-02 7.0400e-04" mass="0.647" pos="-0.003141 0.02872 0.003495" />
+            <joint axis="0 0 1" damping="0.1" limited="true" name="joint2" pos="0 0 0" range="-1.7628 1.7628" />
+            <geom conaffinity="0" contype="0" group="1" mesh="link2_vis" name="link2_visual" rgba="1 1 1 1" type="mesh" />
+            
+            <geom group="0" mesh="link2" name="link2_collision" type="mesh" />
+            <body name="link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+              <inertial fullinertia="3.7242e-02 3.6155e-02 1.0830e-02 -4.7610e-03 -1.1396e-02 -1.2805e-02" mass="3.228604" pos="2.7518e-02 3.9252e-02 -6.6502e-02" />
+              <joint axis="0 0 1" damping="0.1" limited="true" name="joint3" pos="0 0 0" range="-2.8973 2.8973" />
+              <geom conaffinity="0" contype="0" group="1" mesh="link3_vis" name="link3_visual" rgba="1 1 1 1" type="mesh" />
+              
+              <geom group="0" mesh="link3" name="link3_collision" type="mesh" />
+              <body name="link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                <inertial fullinertia="2.5853e-02 1.9552e-02 2.8323e-02 7.7960e-03 -1.3320e-03 8.6410e-03" mass="3.587895" pos="-5.317e-02 1.04419e-01 2.7454e-02" />
+                <joint axis="0 0 1" damping="0.1" limited="true" name="joint4" pos="0 0 0" range="-3.0718 -0.0698" />
+                <geom conaffinity="0" contype="0" group="1" mesh="link4_vis" name="link4_visual" rgba="1 1 1 1" type="mesh" />
+                
+                <geom group="0" mesh="link4" name="link4_collision" type="mesh" />
+                <body name="link5" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                  <inertial fullinertia="3.5549e-02 2.9474e-02 8.6270e-03 -2.1170e-03 -4.0370e-03 2.2900e-04" mass="1.225946" pos="-1.1953e-02 4.1065e-02 -3.8437e-02" />
+                  <joint axis="0 0 1" damping="0.1" limited="true" name="joint5" pos="0 0 0" range="-2.8973 2.8973" />
+                  <geom conaffinity="0" contype="0" group="1" mesh="link5_vis" name="link5_visual" rgba="1 1 1 1" type="mesh" />
+                  
+                  <geom group="0" mesh="link5" name="link5_collision" type="mesh" />
+                  <body name="link6" pos="0 0 0" quat="0.707107 0.707107 0 0">
+                    <inertial fullinertia="1.9640e-03 4.3540e-03 5.4330e-03 1.0900e-04 -1.1580e-03 3.4100e-04" mass="1.666555" pos="6.0149e-02 -1.4117e-02 -1.0517e-02" />
+                    <joint axis="0 0 1" damping="0.01" limited="true" name="joint6" pos="0 0 0" range="-0.0175 3.7525" />
+                    <geom conaffinity="0" contype="0" group="1" mesh="link6_vis" name="link6_visual" rgba="1 1 1 1" type="mesh" />
+                    
+                    <geom group="0" mesh="link6" name="link6_collision" type="mesh" />
+                    <body name="link7" pos="0.088 0 0" quat="0.707107 0.707107 0 0">
+                      <inertial fullinertia="1.2516e-02 1.0027e-02 4.8150e-03 -4.2800e-04 -1.1960e-03 -7.4100e-04" mass="7.35522e-01" pos="1.0517e-02 -4.252e-03 6.1597e-02" />
+                      <joint axis="0 0 1" damping="0.01" limited="true" name="joint7" pos="0 0 0" range="-2.8973 2.8973" />
+                      <geom conaffinity="0" contype="0" group="1" mesh="link7_vis" name="link7_visual" rgba="1. 1. 1. 1." type="mesh" />
+                      
+                      <geom group="0" mesh="link7" name="link7_collision" type="mesh" />
+                      
+                      <body name="right_hand" pos="0 0 0.107" quat="0.924 0 0 -0.383">
+                        <inertial diaginertia="0.05 0.05 0.05" mass="0.5" pos="0 0 0" />
+                        
+                        <camera fovy="75" mode="fixed" name="eye_in_hand" pos="0.05 0 0" quat="0 0.707108 0.707108 0" />
+                        
+                        <site group="1" name="eef_site" pos="0 0 0.1034" rgba="0 0 0 0" size="0.01 0.01 0.01" type="sphere" />
+                        <site group="1" name="sensor_site" pos="0 0 0" rgba="0 0 0 0" size="0.01 0.01 0.01" type="sphere" />
+                      <body name="right_gripper" pos="0 0 0" quat="0.707107 0 0 -0.707107">
+      <site group="1" name="ft_frame" pos="0 0 0" rgba="1 0 0 1" size="0.01 0.01 0.01" type="sphere" />
+      
+      <geom conaffinity="0" contype="0" group="1" mesh="hand_vis" name="hand_visual" pos="0 0 0." quat="0.707107 0 0 0.707107" rgba="1 1 1 1" type="mesh" />
+      <geom group="0" mass="0.81909" mesh="hand" name="hand_collision" pos="0 0 0." quat="0.707107 0 0 0.707107" type="mesh" />
+      
+      <site group="1" name="grip_site" pos="0 0 0.1034" rgba="1 0 0 0.5" size="0.01 0.01 0.01" type="sphere" />
+      <site group="1" name="ee_x" pos="0.1 0 0" quat="0.707105  0 0.707108 0 " rgba="1 0 0 0" size="0.005 .1" type="cylinder" />
+      <site group="1" name="ee_y" pos="0 0.1 0" quat="0.707105 0.707108 0 0" rgba="0 1 0 0" size="0.005 .1" type="cylinder" />
+      <site group="1" name="ee_z" pos="0 0 0.1" quat="1 0 0 0" rgba="0 0 1 0" size="0.005 .1" type="cylinder" />
+      
+      <site group="1" name="grip_site_cylinder" pos="0 0 0.1399" rgba="0 1 0 0.3" size="0.005 10" type="cylinder" />
+      <body name="leftfinger" pos="0 0 0.0584" quat="0.707107 0 0 0.707107">
+        
+        <inertial diaginertia="6.57134e-05 6.09611e-05 1.09932e-05" mass="0.0927059" pos="-1.57863e-05 0.0118731 0.0434103" quat="0.705868 0.0310348 -0.0314925 0.706962" />
+        <joint armature="1.0" axis="0 1 0" damping="100" frictionloss="1.0" limited="true" name="finger_joint1" pos="0 0 0" range="0.0 0.04" type="slide" />
+        <geom conaffinity="0" contype="0" group="1" mesh="finger_vis" name="finger1_visual" rgba="0.499 0.499 0.499 1" type="mesh" />
+        <geom conaffinity="1" condim="4" contype="0" friction="1 0.005 0.0001" group="0" mesh="finger" name="finger1_collision" solref="0.02 1" type="mesh" />
+        <body name="finger_joint1_tip" pos="0 0.0085 0.054">
+          <inertial diaginertia="0.01 0.01 0.01" mass="0.01" pos="0 0 0" quat="0 0 0 1" />
+          <geom conaffinity="1" contype="1" friction="2 0.05 0.0001" group="0" name="finger1_pad_collision" pos="0 -0.005 -0.015" quat="0 0 0 1" size="0.008 0.004 0.008" solref="0.01 0.5" type="box" />
+        </body>
+      </body>
+      <body name="rightfinger" pos="0 0 0.0584" quat="0.707107 0 0 0.707107">
+        
+        <inertial diaginertia="6.57134e-05 6.09611e-05 1.09932e-05" mass="0.0927059" pos="1.57863e-05 -0.0118731 0.0434103" quat="0.705868 -0.0310348 0.0314925 0.706962" />
+        <joint armature="1.0" axis="0 1 0" damping="100" frictionloss="1.0" limited="true" name="finger_joint2" pos="0 0 0" range="-0.04 0.0" type="slide" />
+        <geom conaffinity="0" contype="0" group="1" mesh="finger_vis" name="finger2_visual" quat="0 0 0 1" rgba="0.499 0.499 0.499 1" type="mesh" />
+        <geom conaffinity="1" condim="4" contype="0" friction="1 0.005 0.0001" group="0" mesh="finger" name="finger2_collision" quat="0 0 0 1" solref="0.02 1" type="mesh" />
+        <body name="finger_joint2_tip" pos="0 -0.0085 0.054">
+          <inertial diaginertia="0.01 0.01 0.01" mass="0.01" pos="0 0 0" quat="0 0 0 1" />
+          <geom conaffinity="1" contype="1" friction="2 0.05 0.0001" group="0" name="finger2_pad_collision" pos="0 0.005 -0.015" quat="0 0 0 1" size="0.008 0.004 0.008" solref="0.01 0.5" type="box" />
+        </body>
+      </body>
+    </body>
+  </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  <body name="stiffrope" pos="0.75 0.0 0.35" quat="1 0 0 0">
+      <site group="1" name="ft_rope" pos="0 0 0" rgba="1 0 0 1" size="0.01 0.01 0.01" type="sphere" />
+      <body name="r_joint0_body" pos="0.05 0 0" quat="1.0 0.0 0.0 0.0">
+        <site name="r_joint0_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint0_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <body name="r_link1_body" pos="0.0 0 0" quat="1.0 0.0 0.0 0.0">
+        <body name="r_joint1_body" pos="-0.05 0 0">
+          <site name="r_joint1_site" size="0.0001 0.0001 0.0001" type="sphere" />
+          <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint1_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+        </body>
+        <geom conaffinity="1" contype="1" friction="1 0.005 0.0001" mass="0.1" name="r_link1_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+        <site name="r_link1_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <site group="1" name="twistcylx_1" pos="0 0 0.05" quat="0.707 0 0 -0.707" rgba="0 0 1 0.3" size="0.001 0.05" type="cylinder" />
+        <site group="1" name="twistcyly_1" pos="0 0.05 0" quat="0.707 -0.707 0 0" rgba="1 1 0 0.3" size="0.001 0.05" type="cylinder" />
+      </body>
+    </body>
+    <body name="r_link2_body" pos="0.65 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint2" />
+      <body name="r_joint2_body" pos="-0.05 0 0">
+        <site name="r_joint2_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint2_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link2_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link2_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link3_body" pos="0.55 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint3" />
+      <body name="r_joint3_body" pos="-0.05 0 0">
+        <site name="r_joint3_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint3_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link3_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link3_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link4_body" pos="0.44999999999999996 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint4" />
+      <body name="r_joint4_body" pos="-0.05 0 0">
+        <site name="r_joint4_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint4_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link4_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link4_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link5_body" pos="0.35 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint5" />
+      <body name="r_joint5_body" pos="-0.05 0 0">
+        <site name="r_joint5_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint5_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link5_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link5_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link6_body" pos="0.25 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint6" />
+      <body name="r_joint6_body" pos="-0.05 0 0">
+        <site name="r_joint6_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint6_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link6_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link6_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link7_body" pos="0.1499999999999999 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint7" />
+      <body name="r_joint7_body" pos="-0.05 0 0">
+        <site name="r_joint7_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint7_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link7_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link7_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link8_body" pos="0.04999999999999993 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint8" />
+      <body name="r_joint8_body" pos="-0.05 0 0">
+        <site name="r_joint8_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint8_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link8_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link8_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link9_body" pos="-0.050000000000000044 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint9" />
+      <body name="r_joint9_body" pos="-0.05 0 0">
+        <site name="r_joint9_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint9_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link9_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link9_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link10_body" pos="-0.15000000000000002 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint10" />
+      <body name="r_joint10_body" pos="-0.05 0 0">
+        <site name="r_joint10_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint10_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link10_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link10_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link11_body" pos="-0.25 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint11" />
+      <body name="r_joint11_body" pos="-0.05 0 0">
+        <site name="r_joint11_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint11_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link11_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link11_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link12_body" pos="-0.3500000000000001 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint12" />
+      <body name="r_joint12_body" pos="-0.05 0 0">
+        <site name="r_joint12_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint12_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link12_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link12_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link13_body" pos="-0.4500000000000002 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint13" />
+      <body name="r_joint13_body" pos="-0.05 0 0">
+        <site name="r_joint13_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint13_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link13_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link13_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link14_body" pos="-0.55 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint14" />
+      <body name="r_joint14_body" pos="-0.05 0 0">
+        <site name="r_joint14_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint14_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link14_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link14_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link15_body" pos="-0.6500000000000001 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint15" />
+      <body name="r_joint15_body" pos="-0.05 0 0">
+        <site name="r_joint15_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint15_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link15_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link15_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link16_body" pos="-0.75 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint16" />
+      <body name="r_joint16_body" pos="-0.05 0 0">
+        <site name="r_joint16_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint16_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link16_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link16_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link17_body" pos="-0.8500000000000001 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint17" />
+      <body name="r_joint17_body" pos="-0.05 0 0">
+        <site name="r_joint17_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint17_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link17_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link17_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link18_body" pos="-0.9500000000000002 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint18" />
+      <body name="r_joint18_body" pos="-0.05 0 0">
+        <site name="r_joint18_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint18_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link18_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link18_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link19_body" pos="-1.05 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint19" />
+      <body name="r_joint19_body" pos="-0.05 0 0">
+        <site name="r_joint19_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint19_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom friction="1 0.005 0.0001" mass="0.1" name="r_link19_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link19_site" size="0.0001 0.0001 0.0001" type="sphere" />
+    </body>
+    <body name="r_link20_body" pos="-1.1500000000000001 0.0 0.35" quat="1.0 0.0 0.0 0.0">
+      <freejoint name="freejoint20" />
+      <body name="r_joint20_body" pos="-0.05 0 0">
+        <site name="r_joint20_site" size="0.0001 0.0001 0.0001" type="sphere" />
+        <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" mass="0.0" name="r_joint20_geom" rgba=".8 .2 .1 1" size="0.005 0.005 0.005" type="sphere" />
+      </body>
+      <geom conaffinity="1" contype="1" friction="1 0.005 0.0001" mass="0.1" name="r_link20_geom" quat="0.707 0. 0.707 0." rgba=".1 .2 .1 1" size="0.0050 0.0500" solref="0.001 1" type="cylinder" />
+      <site name="r_link20_site" size="0.0001 0.0001 0.0001" type="sphere" />
+      <site group="1" name="twistcylx_20" pos="0 0 0.05" quat="0.707 0 0 -0.707" rgba="0 0 1 0.3" size="0.001 0.05" type="cylinder" />
+      <site group="1" name="twistcyly_20" pos="0 0.05 0" quat="0.707 -0.707 0 0" rgba="1 1 0 0.3" size="0.001 0.05" type="cylinder" />
+    </body>
+  <body name="table_body" pos="-0.3 0.0 0.225" quat="1 0 0 0">
+      <site group="1" name="tabletop" pos="0 0 0.025" rgba="1 0 0 0" size="0.01 0.01 0.01" type="sphere" />
+      <geom friction="1 0.005 0.0001" group="0" name="table_collision" pos="0 0 0" size="0.6 0.6 0.025" solref="0.001 1" type="box" />
+    </body>
+    <body name="goalmark" pos="-0.7 -0.15 0.24" quat="1 0 0 0">
+      <site group="1" name="goalmark_top" pos="0 0 0.01" rgba="1 0 0 0" size="0.01 0.01 0.01" type="sphere" />
+      <site group="1" name="goalmark_btm" pos="0 0 -0.01" rgba="1 0 0 0" size="0.01 0.01 0.01" type="sphere" />
+      <geom conaffinity="0" contype="0" friction="1 0.005 0.0001" group="0" name="goalmarker_vis" pos="0 0 0.08" rgba="0. 1. 0. 0.2" size="0.009 0.009 0.08" solref="0.001 1" type="box" />
+    </body>
+    <body name="obstacle_0" pos="-0.7 -0.25 0.28" quat="1 0 0 0">
+      <site group="1" name="obstacletop_0" pos="0 0 0.03" rgba="1 0 0 0" size="0.01 0.01 0.01" type="sphere" />
+      <site group="1" name="obstaclebtm_0" pos="0 0 -0.03" rgba="1 0 0 0" size="0.01 0.01 0.01" type="sphere" />
+      <geom conaffinity="1" contype="1" density="1000" friction="1 0.005 0.0001" group="0" name="obscollision_0" pos="0 0 0" rgba="0.7 0.2 0.2 1.0" size="0.01 0.01 0.03" solref="0.001 1" type="box" />
+    </body>
+    <body name="obstacle_1" pos="-0.7 -0.25 0.32" quat="1 0 0 0">
+      <site group="1" name="obstacletop_1" pos="0 0 0.01" rgba="1 0 0 0" size="0.01 0.01 0.01" type="sphere" />
+      <site group="1" name="obstaclebtm_1" pos="0 0 -0.01" rgba="1 0 0 0" size="0.01 0.01 0.01" type="sphere" />
+      <geom conaffinity="1" contype="1" density="1000" friction="1 0.005 0.0001" group="0" name="obscollision_1" pos="0 0 0" rgba="0.7 0.2 0.2 1.0" size="0.01 0.03 0.01" solref="0.001 1" type="box" />
+    </body>
+    <body name="obstacle_2" pos="-0.7 0.0 0.4" quat="1 0 0 0">
+      <site group="1" name="obstacletop_2" pos="0 0 0.01" rgba="1 0 0 0" size="0.01 0.01 0.01" type="sphere" />
+      <site group="1" name="obstaclebtm_2" pos="0 0 -0.01" rgba="1 0 0 0" size="0.01 0.01 0.01" type="sphere" />
+      <geom conaffinity="1" contype="1" density="1000" friction="1 0.005 0.0001" group="0" name="obscollision_2" pos="0 0 0" rgba="0.7 0.2 0.2 1.0" size="0.01 0.7 0.01" solref="0.001 1" type="box" />
+    </body>
+  </worldbody>
+
+  <sensor><torque name="torque_rh" site="sensor_site" />
+    <force name="force_rh" site="sensor_site" />
+  </sensor>
+
+  <equality><weld body1="right_hand" body2="r_joint20_body" relpose="0 0 0.1034 0 1 0 0" solref="0.004 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint1_body" body2="r_joint2_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint2_body" body2="r_joint3_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint3_body" body2="r_joint4_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint4_body" body2="r_joint5_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint5_body" body2="r_joint6_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint6_body" body2="r_joint7_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint7_body" body2="r_joint8_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint8_body" body2="r_joint9_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint9_body" body2="r_joint10_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint10_body" body2="r_joint11_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint11_body" body2="r_joint12_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint12_body" body2="r_joint13_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint13_body" body2="r_joint14_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint14_body" body2="r_joint15_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint15_body" body2="r_joint16_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint16_body" body2="r_joint17_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint17_body" body2="r_joint18_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint18_body" body2="r_joint19_body" solref="0.001 1" />
+     <connect active="true" anchor="0 0.0 0" body1="r_joint19_body" body2="r_joint20_body" solref="0.001 1" />
+  </equality>
+
+  <contact><exclude body1="r_link1_body" body2="r_link20_body" />
+    <exclude body1="r_link1_body" body2="r_link19_body" />
+    <exclude body1="r_link2_body" body2="r_link20_body" />
+    <exclude body1="r_link1_body" body2="r_link2_body" />
+    <exclude body1="r_link2_body" body2="r_link3_body" />
+    <exclude body1="r_link3_body" body2="r_link4_body" />
+    <exclude body1="r_link4_body" body2="r_link5_body" />
+    <exclude body1="r_link5_body" body2="r_link6_body" />
+    <exclude body1="r_link6_body" body2="r_link7_body" />
+    <exclude body1="r_link7_body" body2="r_link8_body" />
+    <exclude body1="r_link8_body" body2="r_link9_body" />
+    <exclude body1="r_link9_body" body2="r_link10_body" />
+    <exclude body1="r_link10_body" body2="r_link11_body" />
+    <exclude body1="r_link11_body" body2="r_link12_body" />
+    <exclude body1="r_link12_body" body2="r_link13_body" />
+    <exclude body1="r_link13_body" body2="r_link14_body" />
+    <exclude body1="r_link14_body" body2="r_link15_body" />
+    <exclude body1="r_link15_body" body2="r_link16_body" />
+    <exclude body1="r_link16_body" body2="r_link17_body" />
+    <exclude body1="r_link17_body" body2="r_link18_body" />
+    <exclude body1="r_link18_body" body2="r_link19_body" />
+    <exclude body1="r_link19_body" body2="r_link20_body" />
+  </contact>
+</mujoco>
