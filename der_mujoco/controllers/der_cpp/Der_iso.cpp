@@ -1,14 +1,16 @@
 #include "Der_iso.h"
 #include "Der_obj.h"
 
-#include <iostream>
+// #include <iostream>
+// #include <cmath>
 // #include <vector>
 // #include <chrono>
 // #include <thread>
 // #include <mutex>
 
-#include <Eigen/Core>
-#include <Eigen/Dense>
+#include "Eigen/Core"
+#include "Eigen/Dense"
+#include "Eigen/Geometry"
 
 /*
 To-do:
@@ -52,7 +54,7 @@ DER_iso::DER_iso(
     
     edges[nv].theta = overall_rot;
     p_thetan = fmod(edges[nv].theta, (2. * M_PI));
-    if (p_thetan > M_PI) {p_thetan -= 2 * M_PI;};
+    if (p_thetan > M_PI) {p_thetan -= 2 * M_PI;}
     // std::cin.get();
 
     initVars(dim_np, node_pos, dim_bf0, bf0sim);
@@ -272,11 +274,14 @@ double DER_iso::updateTheta(const double theta_n)
 
     updateThetaN(theta_n);
     
+    // if (std::isnan(edges[nv].theta)) {std::cout << edges[nv].theta << std::endl;}
+    // if (std::isnan(edges[nv].theta)) {std::cout << 't' << std::endl;}
+    
     d_theta = (edges[nv].theta - edges[0].theta) / nv;
     for (int i = 0; i < (nv+1); i++) {
         edges[i].theta = d_theta * i;
     }
-
+    // std::cout << 'q' << std::endl;
     return edges[nv].theta;
 }
 
@@ -284,6 +289,12 @@ void DER_iso::resetTheta(const double theta_n, const double overall_rot)
 {
     p_thetan = theta_n;
     edges[nv].theta = overall_rot;
+}
+
+void DER_iso::changeAlphaBeta(const double a_bar, const double b_bar)
+{
+    alpha_bar = a_bar;
+    beta_bar = b_bar;
 }
 
 // void DER_iso::calculateNabKbandNabPsi()
@@ -412,7 +423,9 @@ void DER_iso::calculateNabKbandNabPsi_sub2(const int start_i, const int end_i)
             // Eigen::Vector3d f2oo;
             // double f2oo;
             // f2oo = edges[nv].theta;
-            // std::cout << f2oo << std::endl;
+            // if (std::isnan(nodes[j].force[0])) {std::cout << nodes[j].force[0] << std::endl;}
+            // if (std::isnan(nodes[j].force[1])) {std::cout << edges[nv].theta << std::endl;}
+            // if (std::isnan(nodes[j].force[2])) {std::cout << 'c' << std::endl;}
             // if ((j < start_i) || (j > end_i)) {mtx.unlock();}
         }
     }
@@ -535,4 +548,78 @@ void DER_iso::calculateCenterlineF2(int dim_nf, double *node_force)
     // duration2 = stop2 - stop1;
     // std::cout << duration1.count() << "A" << std::endl;
     // std::cout << duration2.count() << "B" << std::endl;
+}
+
+// misc calcs
+void DER_iso::initQe_o2m_loc(
+    int dim_qo2m,
+    double *q_o2m
+    // int dim_qm2o,
+    // double *q_m2o,
+)
+{
+    qe_o2m_loc.x() = q_o2m[0];
+    qe_o2m_loc.y() = q_o2m[1];
+    qe_o2m_loc.z() = q_o2m[2];
+    qe_o2m_loc.w() = q_o2m[3];
+
+    qe_o2m_loc = qe_o2m_loc.normalized();
+
+    // qe_m2o_loc.x() = q_m2o[0];
+    // qe_m2o_loc.y() = q_m2o[1];
+    // qe_m2o_loc.z() = q_m2o[2];
+    // qe_m2o_loc.w() = q_m2o[3];
+}
+
+void DER_iso::calculateOf2Mf(
+    int dim_mato, double *mat_o,
+    int dim_matres, double *mat_res
+)
+{
+    Eigen::Matrix3d mat_mato;
+    Eigen::Matrix3d mat_result;
+    mat_mato << mat_o[0], mat_o[1], mat_o[2],
+        mat_o[3], mat_o[4], mat_o[5],
+        mat_o[6], mat_o[7], mat_o[8];
+
+    Eigen::Quaterniond q_mato(mat_mato);
+    // Eigen::Quaterniond q_mid;
+    // q_mid = q_mato * qe_o2m_loc
+    mat_result = (q_mato * qe_o2m_loc).normalized().toRotationMatrix();
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            mat_res[j+3*i] = mat_result(i,j);
+        }
+    }
+}
+
+double DER_iso::angBtwn3(
+    int dim_v1, double *v1,
+    int dim_v2, double *v2,
+    int dim_va, double *va
+)
+{
+    Eigen::Vector3d v1_c(v1[0], v1[1], v1[2]);
+    Eigen::Vector3d v2_c(v2[0], v2[1], v2[2]);
+    Eigen::Vector3d va_c(va[0], va[1], va[2]);
+    double theta_diff, dot_norm_val;
+    // v1_c << v1[0], v1[1], v1[2];
+    // v2_c << v2[0], v2[1], v2[2];
+    // va_c << va[0], va[1], va[2];
+    dot_norm_val = v1_c.dot(v2_c)/(v1_c.norm()*v2_c.norm());
+    if (dot_norm_val > 1.) {dot_norm_val = 1.;}
+    theta_diff = acos(dot_norm_val);
+    // std::cout << v1_c << std::endl;
+    // std::cout << v2_c << std::endl;
+    // std::cout << v1_c.dot(v2_c) << std::endl;
+    // std::cout << (v1_c.norm()*v2_c.norm()) << std::endl;
+    // std::cout << (v1_c.dot(v2_c)/(v1_c.norm()*v2_c.norm())) << std::endl;
+    // std::cout << acos(v1_c.dot(v2_c)/(v1_c.norm()*v2_c.norm())) << std::endl;
+    // std::cout << (dot_norm_val > 1.) << std::endl;
+    // std::cout << (dot_norm_val == 1) << std::endl;
+    
+    // std::cout << theta_diff << std::endl;
+    // std::cout << 'z' << std::endl;
+    if ((v1_c.cross(v2_c)).dot(va_c) < 0) {theta_diff *= -1.;}
+    return theta_diff;
 }

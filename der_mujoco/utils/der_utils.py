@@ -56,6 +56,9 @@ def ang_btwn(v1, v2):
 def ang_btwn2(v1, v2, v_anchor):
     # use sin and cos to find angle diff from -np.pi to np.pi
     # rotation angle of v1 to v2 wrt to axis v_anchor
+    v1 /= np.linalg.norm(v1)
+    v2 /= np.linalg.norm(v2)
+    v_anchor /= np.linalg.norm(v_anchor)
     e_tol = 1e-3
     if np.linalg.norm(v1-v2) < e_tol:
         return 0.
@@ -91,6 +94,12 @@ def ang_btwn2(v1, v2, v_anchor):
     ab = np.arctan2(sab, cab)
     return ab
 
+def ang_btwn3(v1, v2, v_anchor):
+    theta_diff = np.arccos(v1.dot(v2)/(np.linalg.norm(v1)*np.linalg.norm(v2)))
+    if np.cross(v1,v2).dot(v_anchor) < 0:
+        theta_diff *= -1.
+    return theta_diff
+
 def create_skewsym(v1):
     return np.array(
         [
@@ -101,8 +110,11 @@ def create_skewsym(v1):
     )
 
 if __name__ == "__main__":
-    v1 = np.array([1., 0., 0.])
-    v2 = np.array([-0.9998477, 0., 0.01745238])
+    v1 = np.array([1.5, 1.5, 0.])
+    v2 = np.array([-1., 0., 0.])
     va = np.array([0., 1., 0.])
+    va = np.cross(v1,v2)
+    va *= 1.
 
     print(ang_btwn2(v1,v2,va)/np.pi*180)
+    print(ang_btwn3(v1,v2,va)/np.pi*180)

@@ -3,8 +3,17 @@
 
 #include "Der_obj.h"
 #include "Der_utils.h"
-#include <Eigen/Core>
+#include <vector>
+#include "Eigen/Core"
+#include "Eigen/Geometry"
 // #include <thread>
+
+/*
+DER_iso:
+1. calculates forces on each node in an arrangement of equality constrained 
+discrete cylinders.
+2. refer to paper: Simulation and Manipulation of a Deformable Linear Object
+*/
 
 class DER_iso
 {
@@ -43,6 +52,10 @@ public:
     // Cpp2Py vars
     Eigen::Matrix3d bf0mat;
 
+    // misc calc vars
+    Eigen::Quaterniond qe_o2m_loc;
+    Eigen::Quaterniond qe_m2o_loc;
+
     // // threading variables
     // int s_i, e_i, d_i, n_threads, over_i;
     // std::vector<std::thread> nkbpsiThreads;
@@ -67,6 +80,21 @@ public:
     double updateTheta(double theta_n);   //
 
     void resetTheta(double theta_n, double overall_rot); //
+
+    void changeAlphaBeta(double a_bar, double b_bar); //
+
+    void initQe_o2m_loc(int dim_qo2m, double *q_o2m);
+
+    void calculateOf2Mf(
+        int dim_mato, double *mat_o,
+        int dim_matres, double *mat_res
+    );
+
+    double angBtwn3(
+        int dim_v1, double *v1,
+        int dim_v2, double *v2,
+        int dim_va, double *va
+    );
 
 private:
     void initVars(

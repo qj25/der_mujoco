@@ -1,7 +1,8 @@
 #ifndef DERUTILS_H
 #define DERUTILS_H
 
-#include <Eigen/Core>
+#include <vector>
+#include "Eigen/Core"
 
 class DerUtils
 {

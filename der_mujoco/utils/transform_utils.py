@@ -272,7 +272,7 @@ def check_proximity(v1, v2, check_mode='pos', d_tol=5e-4):
         distbtwn = quat_error(v1,v2)
         d_tol /= 200
         # input('checkquat')
-    # print(np.linalg.norm(distbtwn[:]))
+    print(np.linalg.norm(distbtwn[:]))
     if(
         np.linalg.norm(distbtwn[:]) < d_tol
     ):
@@ -281,7 +281,7 @@ def check_proximity(v1, v2, check_mode='pos', d_tol=5e-4):
 
 if __name__ == "__main__":
     t1 = axisangle2quat(np.array([75.*np.pi/180, 0., 0.]))
-    t2 = axisangle2quat(np.array([0., 0., -45.*np.pi/180]))
+    t2 = axisangle2quat(np.array([0., 0., 60.*np.pi/180]))
     t3 = quat_multiply(t2, t1)
     print(t1)
     print(t2)

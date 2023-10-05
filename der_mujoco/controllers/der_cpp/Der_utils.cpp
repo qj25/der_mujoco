@@ -2,7 +2,7 @@
 #include "Der_obj.h"
 #include <string>
 #include <iostream>
-#include <Eigen/Dense>
+#include "Eigen/Dense"
 
 const Eigen::Vector3d DerUtils::rotateVector3(const Eigen::Vector3d &v, const Eigen::Vector3d &u, const double a)
 {
