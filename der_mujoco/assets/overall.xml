@@ -1,7 +1,7 @@
 <mujoco model="base">
   <statistic extent="2" meansize=".05" />
   <compiler angle="radian" coordinate="local" eulerseq="XYZ" />
-  <option impratio="1" timestep="0.002" solver="Newton" iterations="30" tolerance="1e-10" jacobian="sparse" cone="elliptic" integrator="RK4" />
+  <option impratio="1" timestep="0.0005" solver="Newton" iterations="30" tolerance="1e-10" jacobian="sparse" cone="elliptic" integrator="RK4" />
   <size nconmax="5000" njmax="5000" />
 
   <asset>
@@ -40,14 +40,14 @@
       <site name="ft_rope" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 0 0 1" type="sphere" group="1" />
       <body name="r_joint0_body" pos="0.06283185307179587 0 0" quat="1.0 0.0 0.0 0.0">
         <site name="r_joint0_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint0_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint0_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
       <body name="r_link1_body" pos="0.0 0 0" quat="1.0 0.0 0.0 0.0">
         <body name="r_joint1_body" pos="-0.06283185307179587 0 0">
           <site name="r_joint1_site" type="sphere" size="0.0001 0.0001 0.0001" />
-          <geom name="r_joint1_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+          <geom name="r_joint1_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
         </body>
-        <geom name="r_link1_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+        <geom name="r_link1_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
         <site name="r_link1_site" type="sphere" size="0.0001 0.0001 0.0001" />
       </body>
     </body>
@@ -55,450 +55,450 @@
       <freejoint name="freejoint2" />
       <body name="r_joint2_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint2_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint2_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint2_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link2_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link2_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link2_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link3_body" pos="6.094689747964199 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint3" />
       <body name="r_joint3_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint3_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint3_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint3_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link3_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link3_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link3_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link4_body" pos="5.969026041820608 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint4" />
       <body name="r_joint4_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint4_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint4_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint4_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link4_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link4_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link4_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link5_body" pos="5.843362335677016 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint5" />
       <body name="r_joint5_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint5_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint5_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint5_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link5_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link5_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link5_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link6_body" pos="5.717698629533424 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint6" />
       <body name="r_joint6_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint6_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint6_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint6_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link6_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link6_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link6_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link7_body" pos="5.592034923389832 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint7" />
       <body name="r_joint7_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint7_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint7_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint7_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link7_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link7_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link7_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link8_body" pos="5.46637121724624 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint8" />
       <body name="r_joint8_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint8_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint8_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint8_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link8_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link8_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link8_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link9_body" pos="5.340707511102648 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint9" />
       <body name="r_joint9_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint9_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint9_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint9_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link9_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link9_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link9_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link10_body" pos="5.215043804959057 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint10" />
       <body name="r_joint10_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint10_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint10_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint10_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link10_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link10_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link10_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link11_body" pos="5.089380098815465 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint11" />
       <body name="r_joint11_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint11_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint11_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint11_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link11_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link11_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link11_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link12_body" pos="4.9637163926718735 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint12" />
       <body name="r_joint12_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint12_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint12_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint12_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link12_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link12_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link12_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link13_body" pos="4.838052686528282 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint13" />
       <body name="r_joint13_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint13_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint13_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint13_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link13_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link13_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link13_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link14_body" pos="4.71238898038469 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint14" />
       <body name="r_joint14_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint14_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint14_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint14_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link14_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link14_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link14_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link15_body" pos="4.586725274241099 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint15" />
       <body name="r_joint15_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint15_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint15_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint15_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link15_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link15_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link15_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link16_body" pos="4.461061568097507 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint16" />
       <body name="r_joint16_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint16_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint16_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint16_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link16_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link16_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link16_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link17_body" pos="4.335397861953915 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint17" />
       <body name="r_joint17_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint17_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint17_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint17_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link17_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link17_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link17_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link18_body" pos="4.209734155810323 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint18" />
       <body name="r_joint18_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint18_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint18_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint18_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link18_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link18_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link18_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link19_body" pos="4.084070449666731 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint19" />
       <body name="r_joint19_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint19_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint19_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint19_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link19_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link19_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link19_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link20_body" pos="3.9584067435231396 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint20" />
       <body name="r_joint20_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint20_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint20_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint20_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link20_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link20_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link20_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link21_body" pos="3.832743037379548 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint21" />
       <body name="r_joint21_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint21_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint21_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint21_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link21_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link21_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link21_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link22_body" pos="3.7070793312359562 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint22" />
       <body name="r_joint22_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint22_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint22_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint22_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link22_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link22_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link22_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link23_body" pos="3.5814156250923643 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint23" />
       <body name="r_joint23_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint23_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint23_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint23_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link23_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link23_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link23_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link24_body" pos="3.455751918948773 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint24" />
       <body name="r_joint24_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint24_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint24_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint24_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link24_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link24_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link24_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link25_body" pos="3.330088212805181 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint25" />
       <body name="r_joint25_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint25_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint25_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint25_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link25_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link25_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link25_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link26_body" pos="3.204424506661589 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint26" />
       <body name="r_joint26_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint26_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint26_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint26_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link26_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link26_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link26_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link27_body" pos="3.0787608005179976 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint27" />
       <body name="r_joint27_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint27_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint27_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint27_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link27_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link27_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link27_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link28_body" pos="2.9530970943744057 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint28" />
       <body name="r_joint28_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint28_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint28_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint28_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link28_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link28_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link28_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link29_body" pos="2.827433388230814 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint29" />
       <body name="r_joint29_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint29_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint29_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint29_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link29_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link29_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link29_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link30_body" pos="2.7017696820872223 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint30" />
       <body name="r_joint30_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint30_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint30_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint30_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link30_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link30_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link30_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link31_body" pos="2.5761059759436304 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint31" />
       <body name="r_joint31_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint31_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint31_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint31_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link31_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link31_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link31_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link32_body" pos="2.450442269800039 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint32" />
       <body name="r_joint32_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint32_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint32_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint32_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link32_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link32_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link32_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link33_body" pos="2.324778563656447 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint33" />
       <body name="r_joint33_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint33_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint33_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint33_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link33_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link33_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link33_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link34_body" pos="2.199114857512855 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint34" />
       <body name="r_joint34_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint34_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint34_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint34_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link34_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link34_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link34_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link35_body" pos="2.0734511513692633 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint35" />
       <body name="r_joint35_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint35_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint35_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint35_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link35_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link35_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link35_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link36_body" pos="1.9477874452256723 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint36" />
       <body name="r_joint36_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint36_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint36_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint36_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link36_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link36_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link36_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link37_body" pos="1.8221237390820804 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint37" />
       <body name="r_joint37_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint37_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint37_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint37_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link37_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link37_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link37_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link38_body" pos="1.6964600329384885 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint38" />
       <body name="r_joint38_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint38_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint38_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint38_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link38_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link38_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link38_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link39_body" pos="1.5707963267948966 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint39" />
       <body name="r_joint39_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint39_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint39_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint39_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link39_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link39_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link39_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link40_body" pos="1.4451326206513047 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint40" />
       <body name="r_joint40_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint40_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint40_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint40_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link40_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link40_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link40_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link41_body" pos="1.3194689145077136 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint41" />
       <body name="r_joint41_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint41_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint41_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint41_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link41_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link41_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link41_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link42_body" pos="1.1938052083641217 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint42" />
       <body name="r_joint42_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint42_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint42_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint42_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link42_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link42_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link42_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link43_body" pos="1.0681415022205298 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint43" />
       <body name="r_joint43_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint43_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint43_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint43_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link43_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link43_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link43_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link44_body" pos="0.9424777960769379 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint44" />
       <body name="r_joint44_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint44_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint44_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint44_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link44_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link44_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link44_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link45_body" pos="0.816814089933346 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint45" />
       <body name="r_joint45_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint45_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint45_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint45_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link45_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link45_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link45_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link46_body" pos="0.6911503837897541 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint46" />
       <body name="r_joint46_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint46_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint46_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint46_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link46_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link46_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link46_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link47_body" pos="0.5654866776461631 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint47" />
       <body name="r_joint47_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint47_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint47_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint47_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link47_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link47_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link47_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link48_body" pos="0.4398229715025712 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint48" />
       <body name="r_joint48_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint48_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint48_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint48_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link48_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link48_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link48_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link49_body" pos="0.3141592653589793 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint49" />
       <body name="r_joint49_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint49_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint49_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint49_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link49_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link49_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link49_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link50_body" pos="0.1884955592153874 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint50" />
       <body name="r_joint50_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint50_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint50_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint50_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link50_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link50_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link50_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
     <body name="r_link51_body" pos="0.06283185307179551 0.0 0.5" quat="1.0 0.0 0.0 0.0">
       <freejoint name="freejoint51" />
       <body name="r_joint51_body" pos="-0.06283185307179587 0 0">
         <site name="r_joint51_site" type="sphere" size="0.0001 0.0001 0.0001" />
-        <geom name="r_joint51_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.00011372549019607844" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
+        <geom name="r_joint51_geom" conaffinity="0" contype="0" type="sphere" size="0.015 0.015 0.015" mass="0.02513274122871835" rgba=".8 .2 .1 1" friction="1 0.005 0.0001" />
       </body>
-      <geom name="r_link51_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.001023529411764706" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
+      <geom name="r_link51_geom" quat="0.707 0. 0.707 0." type="capsule" size="0.0150 0.0628" mass="0.22619467105846514" rgba="0.803921568627451 0.5215686274509804 0.24705882352941178 1.0" friction="1 0.005 0.0001" solref="0.01 1" contype="1" conaffinity="1" condim="1" />
       <site name="r_link51_site" type="sphere" size="0.0001 0.0001 0.0001" />
     </body>
   </worldbody>

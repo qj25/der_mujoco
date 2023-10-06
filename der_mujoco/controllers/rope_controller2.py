@@ -435,7 +435,7 @@ class DERRopeBase:
 
     def _limit_totalforce(self):
         # limit the total force magnitude of all nodes to self.f_limit
-        self.f_limit = 200.
+        self.f_limit = 30.
         force_mag = np.linalg.norm(self.force_node)
         if force_mag > self.f_limit:
             self.force_node *= self.f_limit / force_mag
@@ -470,7 +470,7 @@ class DERRopeBase:
     def get_ropevel(self):
         return self.sim.data.body_xvelp[self.link_bodyid[:]]
 
-    def update_force(self, f_scale=1.0):
+    def update_force(self, f_scale=1.0, limit_f=False):
         # start_t = time()
         bf_align = self._update_der_cpp()
         # print(f"bf_align = {bf_align} ++++++++++++++++++++++++")
@@ -482,7 +482,8 @@ class DERRopeBase:
         # self._damp_force(excl_joints)
         self.avg_force = np.linalg.norm(self.force_node)/len(self.force_node)
         # print(f"avg_force = {np.linalg.norm(self.force_node)/len(self.force_node)}")
-        self._limit_totalforce()
+        if limit_f:
+            self._limit_totalforce()
         # end_t3 = time()
         
         # if True:

@@ -6,5 +6,5 @@ setup(name='der_mujoco',
       #       package for package in find_packages() if package.startswith("rl_tut")
       # ]
       # python_requires='>3',
-      install_requires=['gym'] # And any other dependencies foo needs
+      install_requires=['gymnasium'] # And any other dependencies foo needs
 )

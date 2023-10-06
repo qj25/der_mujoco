@@ -1,7 +1,7 @@
 <mujoco model="base">
   <statistic extent="2" meansize=".05" />
   <compiler angle="radian" coordinate="local" eulerseq="XYZ" />
-  <option impratio="1" timestep="0.002" solver="Newton" iterations="30" tolerance="1e-10" jacobian="sparse" cone="elliptic" integrator="RK4"/>
+  <option impratio="1" timestep="0.0005" solver="Newton" iterations="30" tolerance="1e-10" jacobian="sparse" cone="elliptic" integrator="RK4"/>
   <size nconmax="5000" njmax="5000" />
 
   <asset>

@@ -67,12 +67,12 @@ def mbi_indivtest(
     overall_rot=0.,
     alpha_val=1.,
     beta_val=1.,
-    do_render=True,
+    do_render=False,
     new_start=False,
 ):
     r_pieces = 51
     r_len = 2*np.pi * r_pieces / (r_pieces-1)
-    r_mass = r_len
+    r_mass = r_len * 2.
     env = DerRope1DEnv(
         overall_rot=overall_rot,
         do_render=do_render,
@@ -93,11 +93,11 @@ def mbi_indivtest(
     env.close()
     return theta_crit
 
-def mbi_test(new_start=False, load_from_pickle=False):
+def mbi_test(new_start=False, load_from_pickle=False, do_render=False):
     mbi_picklename = 'mbi1.pickle'
     mbi_picklename = os.path.join(
         os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-        "der_muj2/data/" + mbi_picklename
+        "der_mujoco/data/" + mbi_picklename
     )
     if load_from_pickle:
         print('Loading MBI test...')
@@ -123,9 +123,10 @@ def mbi_test(new_start=False, load_from_pickle=False):
             theta_crit[i] = mbi_indivtest(
                 alpha_val=alpha_bar[i],
                 beta_val=beta_bar[i],
-                new_start=new_start
+                new_start=new_start,
+                do_render=do_render
             )
-        overall_rot = 20.
+        overall_rot = 8.5
         for i in range(n_data_mbi):
             print(f'b_a = {b_a[i]}')
             while theta_crit[i] < 1e-7:
@@ -133,7 +134,8 @@ def mbi_test(new_start=False, load_from_pickle=False):
                 theta_crit[i] = mbi_indivtest(
                     overall_rot=overall_rot,
                     alpha_val=alpha_bar[i],
-                    beta_val=beta_bar[i]
+                    beta_val=beta_bar[i],
+                    do_render=do_render
                 )
                 overall_rot += 0.1 # * (np.pi/180)
         pickle_mbidata = np.concatenate((b_a,theta_crit))
@@ -147,7 +149,7 @@ def _pickle2data(ax, r_pieces):
     pickledata_path = 'lhb{}.pickle'.format(r_pieces)
     pickledata_path = os.path.join(
         os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-        "der_muj2/data/" + pickledata_path
+        "der_mujoco/data/" + pickledata_path
     )
     # input(pickledata_path)
     with open(pickledata_path, 'rb') as f:
@@ -226,21 +228,26 @@ def lhb_indivtest(
         alpha_bar=alpha_val,
         beta_bar=beta_val,
         r_mass=r_mass,
-        new_start=new_start
+        new_start=new_start,
+        limit_f=True
     )
     # env.do_render = False
     # env.reset()
     env.close()
 
-def lhb_test(new_start=True, load_from_pickle=False):
+def lhb_test(new_start=True, load_from_pickle=False, do_render=False):
     print('Starting LHB test...')
     # n_pieces = [60]
     n_pieces = [41, 61, 81, 111, 141, 181]
     # n_pieces = [111, 141]
     if not load_from_pickle:
         for i in n_pieces:
-            lhb_indivtest(r_pieces=i, new_start=new_start)
+            lhb_indivtest(
+                r_pieces=i,
+                new_start=new_start,
+                do_render=do_render    
+            )
     lhb_plot(r_pieces_list=n_pieces)
 
-lhb_test(new_start=True, load_from_pickle=False)
-# mbi_test(new_start=False, load_from_pickle=False)
+# lhb_test(new_start=False, load_from_pickle=True, do_render=False)
+mbi_test(new_start=False, load_from_pickle=False, do_render=False)

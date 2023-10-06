@@ -66,6 +66,7 @@ class DerRope1DEnv(gym.Env, utils.EzPickle):
         beta_bar=0.789/4500,    # 0.789/50,
         r_mass=5.,
         new_start=False,
+        limit_f=False,
     ):
         """
         This is an environment to test the rope (validation).
@@ -83,6 +84,7 @@ class DerRope1DEnv(gym.Env, utils.EzPickle):
         self.sim = None
         self.do_render = do_render
         self.test_type = test_type
+        self.limit_f = limit_f
 
         # rope params init
         self.r_len = r_len
@@ -316,7 +318,7 @@ class DerRope1DEnv(gym.Env, utils.EzPickle):
         #     bf_align = self.der_sim.update_force(f_scale=self.cur_time/100.0)
         # else:
         #     bf_align = self.der_sim.update_force()
-        bf_align = self.der_sim.update_force()
+        bf_align = self.der_sim.update_force(limit_f=self.limit_f)
         if not bf_align: 
             input('bf_align')
             self.reset()
@@ -684,6 +686,7 @@ class DerRope1DEnv(gym.Env, utils.EzPickle):
                 pickle.dump(self.init_pickle,f)
             print('Pickle saved!')
             # input('Pickle saved!')
+            # s_ss_center, fphi_center =  self.lhb_testing()
         else:
             with open(lhb_picklename, 'rb') as f:
                 self.init_pickle = pickle.load(f)
@@ -823,8 +826,8 @@ class DerRope1DEnv(gym.Env, utils.EzPickle):
                 # if not i % int(1.76*360) and i != 0:
                 #     self.reset_vel()
                 #     self.hold_pos(10.)
-                if not i % 10:
-                    self.reset_vel()
+                # if not i % 50:
+                #     self.reset_vel()
                 #     self.hold_pos(0.3)
                 # self.reset_vel()
                 self.hold_pos(0.2)
